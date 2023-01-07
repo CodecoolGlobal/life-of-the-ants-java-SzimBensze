@@ -1,5 +1,7 @@
 package com.codecool.ants.geometry;
 
+import java.util.Random;
+
 public class Position {
 
     private final int x;
@@ -17,6 +19,13 @@ public class Position {
 
     public int getY() {
         return y;
+    }
+
+    public static Position randomPos(int colonyWitdh) {
+        Random random = new Random();
+        int randX = random.nextInt(colonyWitdh);
+        int randY = random.nextInt(colonyWitdh);
+        return new Position(randX, randY);
     }
 
     public Position moveTo(Direction dir, int amount) {

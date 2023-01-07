@@ -13,6 +13,14 @@ public abstract class Ant {
         this.colonyWidth = colonyWidth;
     }
 
+    public Position getPosition() {
+        return position;
+    }
+
+    public char getVisual() {
+        return visual;
+    }
+
     public abstract void act();
 
     protected boolean checkMovement(Position position) {

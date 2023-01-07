@@ -7,6 +7,7 @@ public class Drone extends Ant {
     private Position queenPos;
     public Drone(Position position, int colonyWidth, Position queenPos) {
         super(position, colonyWidth);
+        visual = 'D';
         this.queenPos = queenPos;
     }
 
