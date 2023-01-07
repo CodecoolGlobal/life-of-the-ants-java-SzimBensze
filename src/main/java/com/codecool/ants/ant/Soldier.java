@@ -13,6 +13,7 @@ public class Soldier extends Ant {
 
     @Override
     public void act() {
+        dir = dir.turnLeft();
         while (!checkMovement(position.moveTo(dir, 1))) {
             dir = dir.turnLeft();
         }

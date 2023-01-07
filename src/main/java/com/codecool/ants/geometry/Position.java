@@ -29,8 +29,8 @@ public class Position {
     }
 
     public Position moveTo(Direction dir, int amount) {
-        int newX = dir.getStepX() * amount;
-        int newY = dir.getStepY() * amount;
+        int newX = x + dir.getStepX() * amount;
+        int newY = y + dir.getStepY() * amount;
         return new Position(newX, newY);
     }
 }

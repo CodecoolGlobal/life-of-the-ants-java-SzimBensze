@@ -5,7 +5,7 @@ import com.codecool.ants.geometry.Position;
 public abstract class Ant {
     protected Position position;
     protected char visual;
-    private int colonyWidth;
+    protected int colonyWidth;
 
 
     public Ant(Position position, int colonyWidth) {

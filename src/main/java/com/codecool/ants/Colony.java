@@ -17,7 +17,9 @@ public class Colony {
     }
 
     public void generateAnts(int workers, int soldiers, int drones) {
-        ants.add(new Queen(width));
+        Queen queen = new Queen(width);
+        queenPos = queen.getPosition();
+        ants.add(queen);
         for (int i = 0; i < workers; i++) {
             Worker worker = new Worker(Position.randomPos(width), width);
             ants.add(worker);
@@ -27,7 +29,7 @@ public class Colony {
             ants.add(soldier);
         }
         for (int i = 0; i < drones; i++) {
-            Drone drone = new Drone(Position.randomPos(width), width, queenPos);
+            Drone drone = new Drone(Position.randomPos(width), width, queen);
             ants.add(drone);
         }
     }
@@ -39,6 +41,7 @@ public class Colony {
     }
 
     public void display() {
+        String matingText = "";
         String visualised = "";
         for (int y = 0; y < width; y++) {
             for (int x = 0; x < width; x++) {
@@ -47,11 +50,18 @@ public class Colony {
                     if (ant.getPosition().getX() == x && ant.getPosition().getY() == y) {
                         displayChar = ant.getVisual();
                     }
+                    if (ant instanceof Drone) {
+                        switch (((Drone) ant).getStatus()) {
+                            case MATING -> matingText = "HALLELUJAH";
+                            case KICKED -> matingText = ":(";
+                        }
+                    }
                 }
                 visualised += displayChar + " ";
             }
             visualised += "\n";
         }
         System.out.println(visualised);
+        if (matingText != "") System.out.println(matingText);
     }
 }
