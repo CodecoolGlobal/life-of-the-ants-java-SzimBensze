@@ -10,4 +10,9 @@ public class Position {
         this.y = y;
     }
 
+    public Position moveTo(Direction dir, int amount) {
+        int newX = dir.getStepX() * amount;
+        int newY = dir.getStepY() * amount;
+        return new Position(newX, newY);
+    }
 }

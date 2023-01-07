@@ -3,9 +3,21 @@ package com.codecool.ants.geometry;
 import java.util.Random;
 
 public enum Direction {
-        NORTH, EAST, SOUTH, WEST;
+    NORTH(0, -1),
+    EAST(1, 0),
+    SOUTH(0, 1),
+    WEST(-1, 0);
+    private int stepX;
+    private int stepY;
 
-        Direction randomDirection() {
+
+    Direction(int stepX, int stepY) {
+        this.stepX = stepX;
+        this.stepY = stepY;
+    }
+
+
+    Direction randomDirection() {
             Random random = new Random();
             int randDir = random.nextInt(4);
             switch(randDir) {
@@ -16,4 +28,14 @@ public enum Direction {
                 default: return null;
             }
         }
+
+
+    public int getStepX() {
+        return stepX;
     }
+
+
+    public int getStepY() {
+        return stepY;
+    }
+}
