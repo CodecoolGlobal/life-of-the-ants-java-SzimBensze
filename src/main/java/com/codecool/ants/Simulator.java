@@ -16,7 +16,7 @@ public class Simulator {
         Scanner sc = new Scanner(System.in);
         boolean stop = false;
         while (!stop) {
-            System.out.println("----------- Round "+ round + "-----------\n");
+            System.out.println("---------- Round "+ round + "----------\n");
             colony.display();
             colony.update();
             round++;

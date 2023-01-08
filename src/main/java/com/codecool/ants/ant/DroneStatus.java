@@ -1,5 +1,5 @@
 package com.codecool.ants.ant;
 
-public enum DroneStatusType {
+public enum DroneStatus {
     MOVING, KICKED, MATING;
 }

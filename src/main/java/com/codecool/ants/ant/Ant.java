@@ -7,7 +7,6 @@ public abstract class Ant {
     protected char visual;
     protected int colonyWidth;
 
-
     public Ant(Position position, int colonyWidth) {
         this.position = position;
         this.colonyWidth = colonyWidth;
