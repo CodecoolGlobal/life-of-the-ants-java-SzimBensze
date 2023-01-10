@@ -9,16 +9,14 @@ import java.util.Set;
 public class Colony {
     private int width;
     private Set<Ant> ants;
-    private Position queenPos;
 
     public Colony(int width) {
         this.width = width;
-        ants = new HashSet<Ant>();
+        ants = new HashSet<>();
     }
 
     public void generateAnts(int workers, int soldiers, int drones) {
         Queen queen = new Queen(width);
-        queenPos = queen.getPosition();
         ants.add(queen);
         for (int i = 0; i < workers; i++) {
             Worker worker = new Worker(Position.randomPos(width), width);
@@ -61,7 +59,8 @@ public class Colony {
             }
             visualised += "\n";
         }
-        System.out.println(visualised);
+        visualised.strip();
+        System.out.print(visualised);
         if (matingText != "") System.out.println(matingText);
     }
 }

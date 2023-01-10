@@ -29,6 +29,6 @@ public class Queen extends Ant {
 
     public void startMating() {
         matingProgress = 10;
-        cooldown = 20 + random.nextInt(50);
+        cooldown = 30 + random.nextInt(50);
     }
 }

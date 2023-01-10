@@ -11,7 +11,7 @@ public class Simulator {
         simulateColony(colony);
     }
 
-    public static void simulateColony(Colony colony) throws InterruptedException {
+    private static void simulateColony(Colony colony) throws InterruptedException {
         int round = 1;
         Scanner sc = new Scanner(System.in);
         boolean stop = false;
@@ -21,12 +21,12 @@ public class Simulator {
             colony.update();
             round++;
             System.out.println("Enter 'quit' to exit.");
-            if (sc.nextLine().toLowerCase().equals("quit")) quit();
+            if (sc.nextLine().equalsIgnoreCase("quit")) quit();
         }
     }
 
-    public static void quit() throws InterruptedException {
-        System.out.println("Simulation is quitting.");
+    private static void quit() throws InterruptedException {
+        System.out.println("Simulation is stopping.");
         Thread.sleep(2000);
         System.exit(0);
     }

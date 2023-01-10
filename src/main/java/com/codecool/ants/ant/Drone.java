@@ -33,13 +33,13 @@ public class Drone extends Ant {
                     }
                 }
                 else {
-                    getKicked();
+                    beKicked();
                     status = DroneStatus.KICKED;
                 }
             }
             else {
                 if (queen.getMatingProgress() == 0) {
-                    getKicked();
+                    beKicked();
                     status = DroneStatus.MOVING;
                 }
             }
@@ -50,7 +50,7 @@ public class Drone extends Ant {
         return status;
     }
 
-    private void getKicked() {
+    private void beKicked() {
         Direction dir = Direction.randomDirection();
         position = position.moveTo(dir, colonyWidth / 2);
         status = DroneStatus.KICKED;
