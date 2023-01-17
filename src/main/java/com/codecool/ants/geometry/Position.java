@@ -21,10 +21,10 @@ public class Position {
         return y;
     }
 
-    public static Position randomPos(int colonyWitdh) {
+    public static Position randomPos(int colonyWidth) {
         Random random = new Random();
-        int randX = random.nextInt(colonyWitdh);
-        int randY = random.nextInt(colonyWitdh);
+        int randX = random.nextInt(colonyWidth);
+        int randY = random.nextInt(colonyWidth);
         return new Position(randX, randY);
     }
 

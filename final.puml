@@ -1,0 +1,64 @@
+@startuml
+class Colony {
+    - width : int
+    - ants : Set<Ant>
+    + generateAnts() : void
+    + update() : void
+    + display() : void
+}
+
+enum Direction {
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST
+    + randomDirection() : Direction
+    + turnLeft() : Direction
+}
+
+class Position {
+    + randomPos(colonyWidth : int) : Position
+    + moveTo(dir : Direction, amount : int) : Position
+}
+
+abstract class Ant {
+    # pos : Position
+    # visual : char
+    # colonyWidth : int
+    + {abstract} act() : void
+    # checkMovement : boolean
+}
+
+class Worker extends Ant {
+    visual = 'W';
+}
+
+class Soldier extends Ant {
+    visual = 'S';
+    - dir : Direction;
+}
+
+class Drone extends Ant {
+    visual = 'D';
+    - queen : Queen;
+    - status : DroneStatus;
+    + beKicked() : void;
+}
+
+enum DroneStatus {
+    MOVING,
+    KICKED,
+    MATING;
+}
+
+class Queen extends Ant {
+    - cooldown : int;
+    - matingProgress : int;
+    + startMating() : void;
+}
+
+Direction -- Position
+Direction -- Soldier
+DroneStatus -- Drone
+Colony *-> Ant
+@enduml

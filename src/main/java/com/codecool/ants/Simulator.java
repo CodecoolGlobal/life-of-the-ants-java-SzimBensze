@@ -21,8 +21,9 @@ public class Simulator {
             colony.update();
             round++;
             System.out.println("Enter 'quit' to exit.");
-            if (sc.nextLine().equalsIgnoreCase("quit")) quit();
+            if (sc.nextLine().equalsIgnoreCase("quit")) stop = true;
         }
+        quit();
     }
 
     private static void quit() throws InterruptedException {

@@ -34,7 +34,6 @@ public class Drone extends Ant {
                 }
                 else {
                     beKicked();
-                    status = DroneStatus.KICKED;
                 }
             }
             else {

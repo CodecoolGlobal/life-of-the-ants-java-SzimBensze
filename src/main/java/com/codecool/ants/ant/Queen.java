@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Queen extends Ant {
     Random random = new Random();
-    int cooldown = random.nextInt(10);
-    int matingProgress = 0;
+    private int cooldown = random.nextInt(10);
+    private int matingProgress = 0;
     public Queen(int colonyWidth) {
         super(new Position(colonyWidth / 2, colonyWidth / 2), colonyWidth);
         visual = 'Q';
