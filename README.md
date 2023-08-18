@@ -12,6 +12,6 @@ The program is written in Java 17 (LTS) and can be run in a Java IDE, I recommen
 
 As mentioned earlier, the project is fully in Java and it doesn't use any external libraries or third-party extensions. Here's a UML diagram of how the ant classes are built up:
 
-![image](../blob/development/ants.png)
+![image](../development/ants.png)
 
 If interested in the program or anything regarding it feel free to contact me! Please only use my code as educational or personal purpouses, do not copy and redistribute.
