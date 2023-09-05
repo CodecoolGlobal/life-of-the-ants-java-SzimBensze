@@ -33,9 +33,15 @@ public class Colony {
     }
 
     public void update() {
-        for (Ant ant : ants) {
-            ant.act();
-        }
+        for (Ant ant : ants) ant.act();
+    }
+
+    private Queen getQueen() {
+        return ants.stream()
+                .filter(Queen.class::isInstance)
+                .findFirst()
+                .map(Queen.class::cast)
+                .orElse(null);
     }
 
     public void display() {
@@ -61,6 +67,9 @@ public class Colony {
         }
         visualised.strip();
         System.out.print(visualised);
-        if (matingText != "") System.out.println(matingText);
+        if (matingText != "") {
+            System.out.println(matingText);
+            System.out.println("Times mated: " + getQueen().getTimesMated());
+        }
     }
 }
