@@ -8,9 +8,16 @@ This project was a solo homework at my programming school Codecool. It was focus
 
 The program is written in Java 17 (LTS) and can be run in a Java IDE, I recommend using IntelliJ IDEA. Once you have a work environment of your choice, clone the repository and open the project with it, then navigate to the Main.java and execute the code. If everything is set properly, the output will shop in the console. Please follow the instructions to see it interacting.
 
+Run with command line:
+
+```sh
+mvn package
+java -jar target/ants-1.0.jar
+```
+
 ## Technology
 
-As mentioned earlier, the project is fully in Java and it doesn't use any external libraries or third-party extensions. Here's a UML diagram of how the ant classes are built up:
+As mentioned earlier, the project is fully in Java, it is built with Maven build tool for better compile time and quality and it doesn't use any external libraries or third-party extensions. Here's a UML diagram of how the ant classes are built up:
 
 ![image](../development/ants.png)
 
